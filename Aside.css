@@ -1,14 +1,14 @@
 aside {
-  width: 400px;
+  width: 500px;
   min-width: 300px;
-  height: 100%;
-  margin: 1%;
+  height: 100vh;
+  margin: 5px;
   background-color: var(--bg-main);
   border-radius: 2px;
   overflow-y: auto;
 }
 #Aside_Border {
-  padding: 0 7.5%;
+  padding: 0 25px;
 }
 #Hero_Section {
   display: flex;
@@ -54,7 +54,7 @@ aside {
 #Hero_Info2 {
   display: flex;
   justify-content: space-between;
-  padding: 5% 20%;
+  padding: 25px;
   border-bottom: 2px solid var(--bg-card);
 }
 .Language {
