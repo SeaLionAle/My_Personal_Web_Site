@@ -1,11 +1,11 @@
 aside {
-  width: 500px;
-  min-width: 300px;
   height: 100vh;
   margin: 5px;
   background-color: var(--bg-main);
   border-radius: 2px;
   overflow-y: auto;
+  display: flex;
+  flex-direction: column;
 }
 #Aside_Border {
   padding: 0 25px;
@@ -25,7 +25,7 @@ aside {
   font-family: var(--font-heading);
   color: var(--text-primary);
   font-weight: var(--font-weight-headings);
-  font-size: 20px;
+  font-size: 24px;
 }
 #Hero_Section > p:last-child {
   font-family: var(--font-body);
@@ -70,25 +70,45 @@ aside {
   position: relative;
   width: 80px;
   height: 80px;
-  border-radius: 50%;
-  background: conic-gradient(
-    var(--accent-color) calc(var(--p) * 1%),
-    var(--bg-main) 0
-  );
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
 }
-.Circle::after {
+.Circle::before {
   content: "";
   position: absolute;
-  width: 64px;
-  height: 64px;
-  background-color: var(--bg-main);
+  inset: 0;
   border-radius: 50%;
+  background: conic-gradient(
+    var(--accent-color) calc(var(--p) * 1%),
+    transparent 0
+  );
+  -webkit-mask: radial-gradient(circle, transparent 31px, black 32px);
+  mask: radial-gradient(circle, transparent 31px, black 32px);
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
+}
+.Circle:hover {
+  transform: scale(1.1);
+}
+.Circle:hover::before {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 15px var(--accent-color));
 }
 .Circle > p {
   z-index: 1;
+  pointer-events: none;
+  transition:
+    transform 0.3s ease,
+    text-shadow 0.3s ease;
+}
+.Circle:hover > p {
+  transform: scale(1.1);
+  text-shadow: 0 0 10px var(--text-secondary);
 }
 #Tech_Stack {
   display: flex;
@@ -114,10 +134,17 @@ aside {
 }
 #Aside_Contact {
   display: flex;
-  justify-content: space-around;
   background-color: var(--bg-card);
-  padding: 5%;
+  margin-top: auto;
 }
-#Aside_Contact > i {
-  margin: 15px;
+#Aside_Contact > span:hover {
+  background-color: var(--accent-color);
+  transition: 0.4s ease;
+}
+#Aside_Contact > span {
+  display: flex;
+  flex: 1;
+  cursor: pointer;
+  justify-content: center;
+  padding: 30px;
 }

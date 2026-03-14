@@ -1,0 +1,67 @@
+#Sidebar_Wrapper {
+  display: grid;
+  margin: 5px 0;
+}
+#Nav_Bar {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--bg-main);
+  display: flex;
+  flex-direction: column;
+  visibility: visible;
+  transition:
+    transform 0.4s ease-in-out,
+    visibility 0s linear 0s;
+}
+#Open_Nav_Bar,
+#Nav_Bar {
+  grid-area: 1 / 1;
+}
+#Nav_Bar.Hide {
+  transform: translateX(100%);
+  visibility: hidden;
+  transition:
+    transform 0.4s ease-in-out,
+    visibility 0s linear 0.4s;
+}
+#Open_Nav_Bar {
+  display: none;
+  justify-content: center;
+  padding: 40px;
+  height: max-content;
+  cursor: pointer;
+}
+#Close_Nav_Bar {
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+  background-color: var(--bg-card);
+  cursor: pointer;
+}
+#Open_Nav_Bar:hover {
+  color: var(--accent-color);
+  transition: 0.4s ease;
+}
+#Close_Nav_Bar:hover {
+  background-color: var(--accent-color);
+  transition: 0.4s ease;
+}
+
+#Menu_Selector {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+#Menu_Selector > span:hover {
+  background-color: var(--accent-color);
+  color: var(--text-primary);
+  transition: 0.4s ease;
+}
+#Menu_Selector > span {
+  writing-mode: vertical-rl;
+  display: flex;
+  flex: 1;
+  cursor: pointer;
+  justify-content: center;
+  padding: 50px;
+}
