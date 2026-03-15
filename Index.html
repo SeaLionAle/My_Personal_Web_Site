@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="Aside.css" />
     <link rel="stylesheet" href="Main.css" />
     <link rel="stylesheet" href="Nav.css" />
+    <link rel="stylesheet" href="Contact.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -190,7 +191,7 @@
               I build fast, responsive, and custom landing pages from scratch
               using clean code, without relying on heavy page builders.
             </p>
-            <p class="Service_Contact">CONTACT ME ►</p>
+            <p class="Service_Contact Open_Contact">CONTACT ME ►</p>
           </div>
           <div class="Service">
             <p class="Service_Title">Responsive Redesign</p>
@@ -198,7 +199,7 @@
               I take your existing non-mobile-friendly website and rewrite the
               CSS to make it look stunning on all smartphones and tablets.
             </p>
-            <p class="Service_Contact">CONTACT ME ►</p>
+            <p class="Service_Contact Open_Contact">CONTACT ME ►</p>
           </div>
         </div>
       </div>
@@ -213,16 +214,47 @@
           <span><i class="fa-solid fa-bars fa-2xl"></i></span>
         </div>
         <div id="Menu_Selector">
-          <span><a>HOME</a></span>
-          <span><a>CONTACT</a></span>
+          <span id="Reload_Page">HOME</span>
+          <span class="Open_Contact">CONTACT</span>
         </div>
       </nav>
     </div>
 
     <div id="Contact">
-      <p>Contact</p>
+      <button type="button" id="Close_Contact">
+        CLOSE THIS FORM <i class="fa-solid fa-xmark fa-xl"></i>
+      </button>
+      <p>CONTACT</p>
+      <form>
+        <div id="Contact_Top">
+          <div class="Input_Group">
+            <label for="Username">Name</label><br />
+            <input type="text" id="Username" class="Contact_Section" />
+          </div>
+          <div class="Input_Group">
+            <label for="Email">Email</label><br />
+            <input type="email" id="Email" class="Contact_Section" />
+          </div>
+          <div class="Input_Group">
+            <label for="Phone">Phone</label><br />
+            <input
+              type="tel"
+              id="Phone"
+              class="Contact_Section"
+              placeholder="optional"
+            />
+          </div>
+        </div>
+        <div class="Input_Group">
+          <label for="Message">Message</label>
+          <textarea id="Message"></textarea>
+        </div>
+        <div id="Submit_Container">
+          <input type="submit" id="Submit" value="SEND FORM" />
+        </div>
+      </form>
     </div>
-
     <script src="Nav.js"></script>
+    <script src="Contact.js"></script>
   </body>
 </html>

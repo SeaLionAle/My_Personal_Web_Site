@@ -1,0 +1,105 @@
+#Contact {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -45%) scale(0.95);
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  width: 70%;
+  padding: 40px;
+  background-color: var(--bg-body);
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  z-index: 2;
+}
+#Contact.Show {
+  visibility: visible;
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+aside,
+#Main {
+  transition: opacity 0.5s ease;
+}
+.background-dimmed {
+  opacity: 0.1;
+  pointer-events: none;
+}
+#Close_Contact {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-family: var(--font-body);
+  font-size: var(--font-size-others);
+  font-weight: var(--font-weight-headings);
+  color: var(--accent-color);
+  cursor: pointer;
+  letter-spacing: 1px;
+  padding: 5px;
+}
+#Close_Contact:hover {
+  color: var(--text-primary);
+}
+#Contact > p {
+  text-align: center;
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-headings);
+  font-size: 48px;
+  color: var(--text-primary);
+}
+#Contact > form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+#Contact_Top {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+.Input_Group {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.Contact_Section,
+#Message {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid var(--bg-main);
+  border-radius: 4px;
+  background-color: var(--bg-card);
+  padding: 15px;
+}
+.Contact_Section:focus,
+#Message:focus {
+  border-color: var(--text-primary);
+}
+#Message {
+  min-height: 100px;
+  resize: vertical;
+  padding: 15px;
+}
+#Submit_Container {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+#Submit {
+  background-color: var(--accent-color);
+  font-family: var(--font-body);
+  font-weight: var(--font-weight-headings);
+  font-size: var(--font-size-others);
+  border: 2px solid var(--bg-main);
+  letter-spacing: 1px;
+  cursor: pointer;
+  padding: 15px 40px;
+  transition: 0.4s ease;
+}
+#Submit:hover {
+  background-color: var(--text-primary);
+}
