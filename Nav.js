@@ -17,4 +17,5 @@ Open_Nav_Bar.addEventListener("click", () => {
 
 Reload_Page.addEventListener("click", () => {
   location.reload();
+  window.open("Index.html", "_self");
 });

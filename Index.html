@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="Main.css" />
     <link rel="stylesheet" href="Nav.css" />
     <link rel="stylesheet" href="Contact.css" />
+    <link rel="stylesheet" href="Portfolio.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -37,6 +38,9 @@
         --font-size-body: 16px;
         --font-size-others: 20px;
       }
+      html {
+        scroll-behavior: smooth;
+      }
       body {
         background-color: var(--bg-body);
         color: var(--text-secondary);
@@ -45,8 +49,8 @@
         font-size: var(--font-size-body);
 
         display: grid;
-        grid-template-columns: 400px 1fr 100px;
-        height: 100vh;
+        grid-template-columns: 400px 1fr 125px;
+        min-height: 100vh;
         overflow-x: hidden;
       }
     </style>
@@ -125,14 +129,18 @@
       </div>
       <div id="Aside_Contact">
         <span><i class="fa-brands fa-discord fa-xl"></i></span>
-        <span><i class="fa-brands fa-github fa-xl"></i></span>
-        <span><i class="fa-solid fa-envelope fa-xl"></i></span>
+        <span class="Github_Link"
+          ><i class="fa-brands fa-github fa-xl"></i
+        ></span>
+        <span class="Open_Contact"
+          ><i class="fa-solid fa-envelope fa-xl"></i
+        ></span>
         <span><i class="fa-brands fa-linkedin fa-xl"></i></span>
       </div>
     </aside>
 
     <div id="Main">
-      <div id="About_Me">
+      <div id="About_Me1">
         <div id="About_Info">
           <p>
             Welcome to My personal<br />
@@ -147,26 +155,26 @@
           <span class="About_Text">&lt; /</span>
           <span class="Tag">p</span>
           <span class="About_Text">&gt;<br /></span>
-          <a>VIEW MY WORK ►</a>
+          <a href="#Portfolio">VIEW MY WORK &#9658</a>
         </div>
       </div>
-      <div id="Portfolio">
-        <div id="Portfolio_Info">
-          <div class="Portfolio_Info_Container">
-            <span class="Portfolio_Info_Number">100%</span>
-            <span class="Portfolio_Info_Text">Clean Code</span>
+      <div id="About_Me2">
+        <div id="About_Me2_Info">
+          <div class="About_Me2_Info_Container">
+            <span class="About_Me2_Info_Number">100%</span>
+            <span class="About_Me2_Info_Text">Clean Code</span>
           </div>
-          <div class="Portfolio_Info_Container">
-            <span class="Portfolio_Info_Number">404</span>
-            <span class="Portfolio_Info_Text">Bugs Not Found</span>
+          <div class="About_Me2_Info_Container">
+            <span class="About_Me2_Info_Number">404</span>
+            <span class="About_Me2_Info_Text">Bugs Not Found</span>
           </div>
-          <div class="Portfolio_Info_Container">
-            <span class="Portfolio_Info_Number">24/7</span>
-            <span class="Portfolio_Info_Text">Fast Response</span>
+          <div class="About_Me2_Info_Container">
+            <span class="About_Me2_Info_Number">24/7</span>
+            <span class="About_Me2_Info_Text">Fast Response</span>
           </div>
-          <div class="Portfolio_Info_Container">
-            <span class="Portfolio_Info_Number">100%</span>
-            <span class="Portfolio_Info_Text">Problem Solver</span>
+          <div class="About_Me2_Info_Container">
+            <span class="About_Me2_Info_Number">100%</span>
+            <span class="About_Me2_Info_Text">Problem Solver</span>
           </div>
         </div>
         <p>My Services</p>
@@ -220,26 +228,56 @@
       </nav>
     </div>
 
+    <div id="Portfolio">
+      <p>My Projects</p>
+      <div id="Projects_Grid">
+        <div class="Project_Card">
+          <span><img src="Imgs/Old_Wedding_Website.png"/></span>
+          <div class="Project_Info">
+            <p>Custom Wedding Website</p>
+            <p>
+              A fully responsive and custom-designed landing page for a wedding
+              event, built with HTML5\CSS3, JAVASCRIPT and PHP without any
+              frameworks (This website is in Italian).
+            </p>
+            <span><a>VIEW PROJECT &#9658</a></span>
+          </div>
+        </div>
+        <div class="Project_Card">
+          <span><img src="Imgs/This_Website.png" class="Github_Link" /></span>
+          <div class="Project_Info">
+            <p>Personal Developer Portfolio</p>
+            <p>
+              A modern, dark-themed portfolio built from scratch focusing on
+              clean UI, CSS Grid/Flexbox, JavaScript interactions and PHP forms.
+            </p>
+            <span class="Github_Link"><a>VIEW PROJECT &#9658</a></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div id="Contact">
       <button type="button" id="Close_Contact">
         CLOSE THIS FORM <i class="fa-solid fa-xmark fa-xl"></i>
       </button>
       <p>CONTACT</p>
-      <form>
+      <form action="Config.php" method="post">
         <div id="Contact_Top">
           <div class="Input_Group">
             <label for="Username">Name</label><br />
-            <input type="text" id="Username" class="Contact_Section" />
+            <input type="text" name="name" id="Username" class="Contact_Section" required />
           </div>
           <div class="Input_Group">
             <label for="Email">Email</label><br />
-            <input type="email" id="Email" class="Contact_Section" />
+            <input type="email" name="email" id="Email" class="Contact_Section" required/>
           </div>
           <div class="Input_Group">
             <label for="Phone">Phone</label><br />
             <input
               type="tel"
               id="Phone"
+              name="phone"
               class="Contact_Section"
               placeholder="optional"
             />
@@ -247,7 +285,7 @@
         </div>
         <div class="Input_Group">
           <label for="Message">Message</label>
-          <textarea id="Message"></textarea>
+          <textarea name="message"id="Message" required></textarea>
         </div>
         <div id="Submit_Container">
           <input type="submit" id="Submit" value="SEND FORM" />

@@ -1,9 +1,8 @@
 aside {
-  height: 100vh;
+  min-height: 100%;
   margin: 5px;
   background-color: var(--bg-main);
   border-radius: 2px;
-  overflow-y: auto;
   display: flex;
   flex-direction: column;
 }

@@ -1,0 +1,53 @@
+#Portfolio {
+  grid-column: 2 / 3;
+}
+#Portfolio > p {
+  color: var(--text-primary);
+  font-size: 48px;
+  font-weight: var(--font-weight-headings);
+  font-family: var(--font-heading);
+  margin-bottom: 30px;
+}
+#Projects_Grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+.Project_Card {
+  background-color: var(--bg-card);
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.4s ease;
+}
+.Project_Card:hover {
+  transform: translateY(-5px);
+}
+.Project_Card > span > img {
+  width: 100%;
+  height: 300px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  opacity: 0.4;
+}
+.Project_Info > p {
+  color: var(--text-primary);
+  font-weight: var(--font-weight-headings);
+  font-size: var(--font-size-others);
+}
+.Project_Info > p:nth-child(2) {
+  color: var(--text-secondary);
+  font-weight: var(--font-weight-body);
+  font-size: var(--font-size-body);
+}
+.Project_Info > span {
+  color: var(--accent-color);
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: var(--font-weight-headings);
+  transition: color 0.4s ease;
+}
+.Project_Info > span:hover {
+  color: var(--text-primary);
+}
