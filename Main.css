@@ -1,7 +1,7 @@
 #Main {
   width: 100%;
   min-height: 100%;
-  margin: 5px 0 5px 5px;
+  margin: 13px 0 13px 5px;
   background-color: var(--bg-main);
   background-image:
     linear-gradient(
@@ -136,4 +136,39 @@
 }
 .Service_Contact:hover {
   color: var(--text-primary);
+}
+
+@media (max-width: 1024px) {
+  #Main {
+    order: 1;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #About_Me1 {
+    margin: 20px;
+    background-size: 100%;
+  }
+  #About_Me2 {
+    margin: 20px;
+  }
+  .About_Me2_Info_Number {
+    margin-right: 10px;
+  }
+  #About_Me2_Info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  #Services {
+    display: flex;
+    flex-direction: column;
+  }
+  .Service {
+    margin: 5px 0;
+  }
+  .Service:hover {
+    transform: none;
+  }
 }

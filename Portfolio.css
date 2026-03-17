@@ -51,3 +51,19 @@
 .Project_Info > span:hover {
   color: var(--text-primary);
 }
+
+@media (max-width: 1024px) {
+  #Portfolio {
+    order: 3;
+  }
+  .Project_Card {
+    margin: 0 5px;
+  }
+  .Project_Card:hover {
+    transform: none;
+  }
+  #Projects_Grid {
+    display: flex;
+    flex-direction: column;
+  }
+}

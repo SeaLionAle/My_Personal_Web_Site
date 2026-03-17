@@ -1,6 +1,6 @@
 aside {
   min-height: 100%;
-  margin: 5px;
+  margin: 13px 5px 13px 13px;
   background-color: var(--bg-main);
   border-radius: 2px;
   display: flex;
@@ -146,4 +146,15 @@ aside {
   cursor: pointer;
   justify-content: center;
   padding: 30px;
+}
+@media (max-width: 1024px) {
+  aside {
+    width: 100%;
+
+    order: 2;
+  }
+
+  #Aside_Contact > span {
+    padding: 20px;
+  }
 }

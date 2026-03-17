@@ -1,6 +1,6 @@
 #Sidebar_Wrapper {
   display: grid;
-  margin: 5px 5px 5px 0;
+  margin: 13px 13px 13px 0;
   min-height: 100%;
 }
 #Nav_Bar {
@@ -26,43 +26,91 @@
     visibility 0s linear 0.4s;
 }
 #Open_Nav_Bar {
-  display: none;
+  display: flex;
   justify-content: center;
   padding: 40px;
   height: max-content;
+  width: max-content;
   cursor: pointer;
+  opacity: 1;
+  visibility: visible;
+  transition:
+    opacity 0.4s ease,
+    visibility 0.4s;
+}
+#Open_Nav_Bar.Hide_Icon {
+  opacity: 0;
+  visibility: hidden;
 }
 #Close_Nav_Bar {
   display: flex;
   justify-content: center;
-  padding: 40px;
-  background-color: var(--bg-card);
-  cursor: pointer;
 }
-#Open_Nav_Bar:hover {
+#Open_Nav_Bar > span:hover {
   color: var(--accent-color);
   transition: 0.4s ease;
 }
 #Close_Nav_Bar:hover {
-  background-color: var(--accent-color);
   transition: 0.4s ease;
 }
-
 #Menu_Selector {
   display: flex;
   align-items: center;
   flex-direction: column;
 }
+#Close_Nav_Bar > span,
+#Menu_Selector > span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  cursor: pointer;
+  transition: 0.4s ease;
+  flex: 1;
+}
+#Menu_Selector > span {
+  writing-mode: vertical-rl;
+}
+
 #Menu_Selector > span:hover {
   background-color: var(--accent-color);
   color: var(--text-primary);
 }
-#Menu_Selector > span {
-  writing-mode: vertical-rl;
-  display: flex;
-  flex: 1;
-  cursor: pointer;
-  justify-content: center;
-  padding: 50px;
-  transition: 0.4s ease;
+
+@media (max-width: 1024px) {
+  #Sidebar_Wrapper {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    min-height: 50px;
+    margin: 0;
+    z-index: 2;
+  }
+  #Nav_Bar {
+    flex-direction: row;
+    justify-content: space-between;
+    overflow-y: hidden;
+  }
+  #Nav_Bar.Hide {
+    transform: translateY(-100%);
+  }
+  #Open_Nav_Bar {
+    display: flex;
+    justify-content: flex-start;
+    padding: 30px;
+  }
+  #Close_Nav_Bar {
+    align-items: center;
+    transform: rotate(90deg);
+  }
+  #Menu_Selector {
+    flex-direction: row;
+  }
+  #Close_Nav_Bar > span,
+  #Menu_Selector > span {
+    writing-mode: horizontal-tb;
+    padding: 20px;
+    width: 100%;
+  }
 }
