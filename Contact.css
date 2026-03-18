@@ -75,6 +75,7 @@ aside,
   border-radius: 4px;
   background-color: var(--bg-card);
   padding: 15px;
+  color: var(--text-primary);
 }
 .Contact_Section:focus,
 #Message:focus {
@@ -159,7 +160,6 @@ aside,
   }
   #Discord_Contact {
     min-width: 85%;
-
     padding: 40px 10px;
   }
 }

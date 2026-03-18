@@ -148,7 +148,10 @@
   }
   #About_Me1 {
     margin: 20px;
-    background-size: 100%;
+    background-size: 110%;
+  }
+  #About_Info > p {
+    text-align: center;
   }
   #About_Me2 {
     margin: 20px;
@@ -170,5 +173,15 @@
   }
   .Service:hover {
     transform: none;
+  }
+}
+@media (max-width: 767px) and (min-width: 350px) {
+  #About_Info > p {
+    font-size: 34px;
+  }
+}
+@media (max-width: 349px) {
+  #About_Info > p {
+    font-size: 32px;
   }
 }

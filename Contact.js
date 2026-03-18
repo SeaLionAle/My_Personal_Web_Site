@@ -22,10 +22,17 @@ Close_Contact.addEventListener("click", () => {
 });
 
 const Open_Github = document.querySelectorAll(".Github_Link");
-
+const Open_Old_Wedding_Website_Link = document.querySelectorAll(
+  ".Old_Wedding_Website_Link",
+);
 Open_Github.forEach((OpenG) => {
   OpenG.addEventListener("click", () => {
     window.open("https://github.com/SeaLionAle/My_Personal_Web_Site", "_blank");
+  });
+});
+Open_Old_Wedding_Website_Link.forEach((OpenW) => {
+  OpenW.addEventListener("click", () => {
+    window.open("https://github.com/SeaLionAle/OldWeddingWebsite", "_blank");
   });
 });
 

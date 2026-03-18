@@ -150,11 +150,15 @@ aside {
 @media (max-width: 1024px) {
   aside {
     width: 100%;
-
+    margin: 5px;
     order: 2;
   }
-
   #Aside_Contact > span {
     padding: 20px;
+  }
+}
+@media (max-width: 1024px) and (min-width: 768px) {
+  #Hero_Info2 {
+    justify-content: space-around;
   }
 }
