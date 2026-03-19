@@ -2,9 +2,6 @@ const Open_Contact = document.querySelectorAll(".Open_Contact");
 const Contact = document.getElementById("Contact");
 const Body = document.querySelectorAll("aside, #Main, #Portfolio");
 const Close_Contact = document.getElementById("Close_Contact");
-const Open_Discord_Contact = document.getElementById("Open_Discord_Contact");
-const Discord_Contact = document.getElementById("Discord_Contact");
-const Close_Discord_Contact = document.getElementById("Close_Discord_Contact");
 
 Open_Contact.forEach((OpenC) => {
   OpenC.addEventListener("click", () => {
@@ -36,6 +33,9 @@ Open_Old_Wedding_Website_Link.forEach((OpenW) => {
   });
 });
 
+const Open_Discord_Contact = document.getElementById("Open_Discord_Contact");
+const Discord_Contact = document.getElementById("Discord_Contact");
+const Close_Discord_Contact = document.getElementById("Close_Discord_Contact");
 Open_Discord_Contact.addEventListener("click", () => {
   Discord_Contact.classList.add("Show");
   Body.forEach((Section) => {
@@ -46,5 +46,12 @@ Close_Discord_Contact.addEventListener("click", () => {
   Discord_Contact.classList.remove("Show");
   Body.forEach((Section) => {
     Section.classList.remove("background-dimmed");
+  });
+});
+
+const Open_Linkedin = document.querySelectorAll(".Linkedin_Link");
+Open_Linkedin.forEach((OpenL) => {
+  OpenL.addEventListener("click", () => {
+    window.open("https://www.linkedin.com/in/alessiocolombodev", "_blank");
   });
 });
