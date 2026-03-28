@@ -70,13 +70,75 @@
 }
 #Menu_Selector > span {
   writing-mode: vertical-rl;
+  white-space: nowrap;
 }
 
 #Menu_Selector > span:hover {
   background-color: var(--accent-color);
   color: var(--text-primary);
 }
-
+#Nav_Divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 20px 0;
+  cursor: default;
+  color: var(--text-primary);
+}
+#Nav_Divider::before,
+#Nav_Divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid var(--accent-color);
+}
+#Nav_Divider > span {
+  writing-mode: horizontal-tb;
+}
+#Toggle_Apps_Text {
+  cursor: pointer;
+}
+#Toggle_Apps_Text:hover {
+  color: var(--accent-color);
+}
+#Toggle_Apps {
+  cursor: pointer;
+  transition: transform 0.4s ease;
+  font-size: var(--font-size-others);
+}
+.Rotate_Arrow {
+  transform: rotate(180deg) !important;
+}
+#Apps_List {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition:
+    max-height 0.4s ease,
+    opacity 0.4s ease;
+}
+#Apps_List.Show_Apps {
+  max-height: 300px;
+  opacity: 1;
+}
+#Apps_List > span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  cursor: pointer;
+  transition: 0.4s ease;
+  flex: 1;
+  writing-mode: vertical-rl;
+  white-space: nowrap;
+}
+#Apps_List > span:hover {
+  background-color: var(--accent-color);
+  color: var(--text-primary);
+}
 @media (max-width: 1024px) {
   #Sidebar_Wrapper {
     position: fixed;
@@ -112,5 +174,58 @@
     writing-mode: horizontal-tb;
     padding: 20px;
     width: 100%;
+  }
+  #Nav_Divider {
+    flex-direction: row;
+    gap: 5px;
+  }
+  #Nav_Divider > span {
+    writing-mode: vertical-lr;
+  }
+  #Nav_Divider::before,
+  #Nav_Divider::after {
+    border-bottom: none;
+  }
+  #Toggle_Apps {
+    margin-left: 0;
+    transform: rotate(-90deg);
+  }
+  .Rotate_Arrow {
+    transform: rotate(90deg) !important;
+  }
+  #Apps_List {
+    flex-direction: row;
+    max-height: none;
+    max-width: 0;
+    transition:
+      max-width 0.4s ease,
+      opacity 0.4s ease;
+  }
+  #Apps_List.Show_Apps {
+    max-width: 500px;
+  }
+  #Apps_List > span {
+    writing-mode: horizontal-tb;
+    padding: 20px;
+  }
+  #Nav_Bar::-webkit-scrollbar {
+    display: inline;
+    height: 4px;
+  }
+  #Nav_Bar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  #Nav_Bar::-webkit-scrollbar-thumb {
+    background-color: var(--accent-color);
+    border-radius: 10px;
+  }
+  #Apps_List {
+    flex-shrink: 0;
+  }
+}
+@media (max-width: 349px) {
+  #Close_Nav_Bar > span,
+  #Menu_Selector > span {
+    padding: 15px;
   }
 }

@@ -136,7 +136,12 @@ body {
   flex-direction: column;
   align-items: center;
 }
-
+#Todo_App > p {
+  font-family: var(--font-heading);
+  font-size: 32px;
+  color: var(--accent-color);
+  font-weight: var(--font-weight-headings);
+}
 #Settings {
   max-width: 540px;
   margin: 20px 0;
@@ -152,6 +157,7 @@ body {
   gap: 10px;
 }
 #Settings > span > i {
+  margin-right: 10px;
   font-size: 32px;
   transition: 0.4s ease;
 }
@@ -162,7 +168,7 @@ body {
   border: none;
   outline: none;
   padding: 16px 0;
-  width: 200px;
+  width: 250px;
   background-color: var(--accent-color);
   cursor: pointer;
   border-radius: 4px;
@@ -177,20 +183,13 @@ body {
 
 /* Third Part */
 
-#App > p {
-  font-family: var(--font-heading);
-  font-size: 48px;
-  color: var(--accent-color);
-  text-align: center;
-  font-weight: var(--font-weight-headings);
-}
 #Row {
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: var(--bg-card);
   border-radius: 4px;
-  padding-left: 20px;
+  padding-left: 30px;
   margin-bottom: 25px;
 }
 #Row > input {
@@ -260,4 +259,70 @@ body {
 }
 #App > ul > li > .close:hover {
   background: var(--bg-body);
+}
+
+@media (max-width: 1024px) {
+  body {
+    overflow-x: hidden;
+  }
+  #Container {
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
+  #Project_Info {
+    margin: 20px auto;
+  }
+  #Todo_App {
+    margin: 20px auto;
+    padding: 30px 20px;
+  }
+  #Settings > span {
+    margin: 10px;
+  }
+}
+@media (max-width: 1024px) and (min-width: 400px) {
+  #Project_Info {
+    max-width: 400px;
+  }
+  #Todo_App {
+    max-width: 350px;
+  }
+  #Row {
+    padding-left: 15px;
+  }
+}
+@media (max-width: 399px) {
+  body {
+    font-size: 14px;
+  }
+  #Project_Info {
+    max-width: 300px;
+  }
+  #Tips > ul > li {
+    text-align: center;
+  }
+  #Todo_App {
+    max-width: 260px;
+  }
+  #Settings > span > button {
+    width: 200px;
+    padding: 10px 0;
+    font-size: 14px;
+  }
+  #Row {
+    padding-left: 5px;
+  }
+  #Row > input {
+    width: 150px;
+    font-size: 14px;
+  }
+  #Row > button {
+    padding: 10px 40px;
+    font-size: 14px;
+  }
+  #App > ul > li {
+    padding: 10px;
+    font-size: 14px;
+  }
 }

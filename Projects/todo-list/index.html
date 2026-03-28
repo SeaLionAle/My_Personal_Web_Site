@@ -16,6 +16,9 @@
       crossorigin="anonymous"
     ></script>
     <style>
+      ::-webkit-scrollbar {
+        display: none;
+      }
       :root {
         --bg-body: #1b1b24;
         --bg-main: #1e1e28;
@@ -64,13 +67,14 @@
         <div id="Tips">
           <p>Tips:</p>
           <ul>
-            <li>Type "Hello World!" in the input box below.</li>
+            <li>Type "Hello World!" in the input box.</li>
             <li>Click the "Add" button to save it.</li>
           </ul>
         </div>
       </div>
 
       <div id="Todo_App">
+        <p>To-Do List</p>
         <div id="Settings">
           <span id="Return_Portfolio">
             <i class="fa-solid fa-tent-arrow-turn-left"></i>
@@ -82,7 +86,6 @@
           </span>
         </div>
         <div id="App">
-          <p>To-Do List</p>
           <div id="Row">
             <input type="text" id="Input-box" placeholder="Add your text" />
             <button onclick="Addtask()">Add</button>
