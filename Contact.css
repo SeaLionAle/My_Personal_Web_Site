@@ -41,6 +41,7 @@ aside,
   cursor: pointer;
   letter-spacing: 1px;
   padding: 5px;
+  transition: 0.4s ease;
 }
 #Close_Contact:hover {
   color: var(--text-primary);

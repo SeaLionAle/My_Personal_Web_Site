@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alessio Colombo | To-Do List</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/bbb4978af8.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      :root {
+        --bg-body: #1b1b24;
+        --bg-main: #1e1e28;
+        --bg-card: #2b2b35;
+        --accent-color: #ffc107;
+        --text-primary: #ffffff;
+        --text-secondary: #8c8c8e;
+
+        --font-heading: "Montserrat";
+        --font-body: "Roboto";
+
+        --font-weight-headings: 800;
+        --font-weight-body: 400;
+
+        --font-size-body: 16px;
+        --font-size-others: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="Container">
+      <div id="Project_Info">
+        <p>JavaScript To-Do App</p>
+        <p>
+          This is a functional task management application built entirely with
+          vanilla JavaScript. It demonstrates DOM manipulation, event handling,
+          and data persistence.
+        </p>
+        <div id="Tech_Stack">
+          <p>Tech Stack:</p>
+          <div id="Stack">
+            <span><i class="fa-brands fa-html5"></i>HTML5</span>
+            <span><i class="fa-brands fa-css3-alt"></i>CSS3</span>
+            <span><i class="fa-brands fa-square-js"></i>Vanilla JS</span>
+            <span><i class="fa-solid fa-box-open"></i>LocalStorage</span>
+          </div>
+        </div>
+        <div id="Features">
+          <p>Features:</p>
+          <ul>
+            <li>Add, check, and delete tasks dynamically.</li>
+            <li>Data is saved in your browser's LocalStorage.</li>
+            <li>Fully responsive UI with CSS variables.</li>
+          </ul>
+        </div>
+        <div id="Tips">
+          <p>Tips:</p>
+          <ul>
+            <li>Type "Hello World!" in the input box below.</li>
+            <li>Click the "Add" button to save it.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div id="Todo_App">
+        <div id="Settings">
+          <span id="Return_Portfolio">
+            <i class="fa-solid fa-tent-arrow-turn-left"></i>
+            <button>Back to Portfolio</button>
+          </span>
+          <span id="Reset_Page">
+            <i class="fa-solid fa-arrow-rotate-left"></i>
+            <button>Clear & Restart</button>
+          </span>
+        </div>
+        <div id="App">
+          <p>To-Do List</p>
+          <div id="Row">
+            <input type="text" id="Input-box" placeholder="Add your text" />
+            <button onclick="Addtask()">Add</button>
+          </div>
+          <ul id="List_Container"></ul>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
