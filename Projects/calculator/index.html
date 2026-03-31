@@ -1,0 +1,250 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alessio Colombo | Calculator</title>
+    <link rel="icon" type="image/png" href="../../Imgs/Favicon_Personal_Web_Site.png">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/bbb4978af8.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      ::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="Container">
+      <div id="Calculator_App">
+        <div id="Display"></div>
+        <div id="Keys">
+          <button
+            style="grid-area: del"
+            class="Operator-btn"
+            onclick="Backspace()"
+          >
+            <i class="fa-solid fa-delete-left"></i>
+          </button>
+          <button
+            style="grid-area: c"
+            class="Operator-btn"
+            onclick="ClearDisplay()"
+          >
+            C
+          </button>
+          <button
+            style="grid-area: plus"
+            class="Operator-btn"
+            onclick="AppendToDisplay('+')"
+          >
+            +
+          </button>
+          <button
+            style="grid-area: min"
+            class="Operator-btn"
+            onclick="AppendToDisplay('-')"
+          >
+            -
+          </button>
+          <button
+            style="grid-area: mult"
+            class="Operator-btn"
+            onclick="AppendToDisplay('*')"
+          >
+            *
+          </button>
+          <button
+            style="grid-area: div"
+            class="Operator-btn"
+            onclick="AppendToDisplay('/')"
+          >
+            /
+          </button>
+          <button
+            style="grid-area: eq"
+            class="Operator-btn"
+            id="Btn-Equals"
+            onclick="Calculate()"
+          >
+            =
+          </button>
+          <button style="grid-area: pct" onclick="AppendToDisplay('%')">
+            %
+          </button>
+
+          <button style="grid-area: n7" onclick="AppendToDisplay('7')">
+            7
+          </button>
+          <button style="grid-area: n8" onclick="AppendToDisplay('8')">
+            8
+          </button>
+          <button style="grid-area: n9" onclick="AppendToDisplay('9')">
+            9
+          </button>
+          <button style="grid-area: n4" onclick="AppendToDisplay('4')">
+            4
+          </button>
+          <button style="grid-area: n5" onclick="AppendToDisplay('5')">
+            5
+          </button>
+          <button style="grid-area: n6" onclick="AppendToDisplay('6')">
+            6
+          </button>
+          <button style="grid-area: n1" onclick="AppendToDisplay('1')">
+            1
+          </button>
+          <button style="grid-area: n2" onclick="AppendToDisplay('2')">
+            2
+          </button>
+          <button style="grid-area: n3" onclick="AppendToDisplay('3')">
+            3
+          </button>
+          <button
+            style="grid-area: n0"
+            id="Btn-Zero"
+            onclick="AppendToDisplay('0')"
+          >
+            0
+          </button>
+          <button style="grid-area: dot" onclick="AppendToDisplay('.')">
+            ,
+          </button>
+
+          <button
+            style="grid-area: cbrt"
+            class="sci-btn"
+            onclick="AppendToDisplay('∛(')"
+          >
+            ∛
+          </button>
+
+          <button
+            style="grid-area: ln"
+            class="sci-btn"
+            onclick="AppendToDisplay('ln(')"
+          >
+            ln
+          </button>
+          <button
+            style="grid-area: log"
+            class="sci-btn"
+            onclick="AppendToDisplay('log(')"
+          >
+            log
+          </button>
+          <button
+            style="grid-area: mod"
+            class="sci-btn"
+            onclick="AppendToDisplay('abs(')"
+          >
+            |x|
+          </button>
+          <button
+            style="grid-area: e"
+            class="sci-btn"
+            onclick="AppendToDisplay('e')"
+          >
+            e
+          </button>
+          <button
+            style="grid-area: oparen"
+            class="sci-btn"
+            onclick="AppendToDisplay('(')"
+          >
+            &#40;
+          </button>
+          <button
+            style="grid-area: cparen"
+            class="sci-btn"
+            onclick="AppendToDisplay(')')"
+          >
+            &#41;
+          </button>
+          <button
+            style="grid-area: power"
+            class="sci-btn"
+            onclick="AppendToDisplay('^')"
+          >
+            ^
+          </button>
+          <button
+            style="grid-area: sqrt"
+            class="sci-btn"
+            onclick="AppendToDisplay('√(')"
+          >
+            √
+          </button>
+          <button
+            style="grid-area: fact"
+            class="sci-btn"
+            onclick="AppendToDisplay('!')"
+          >
+            !
+          </button>
+          <button
+            style="grid-area: pi"
+            class="sci-btn"
+            onclick="AppendToDisplay('π')"
+          >
+            π
+          </button>
+        </div>
+        <button onclick="SwitchCalculatorType()" id="Toggle-Btn">
+          Scientific Calculator
+        </button>
+      </div>
+
+      <div id="Project_Info">
+        <p>JavaScript Grid Calculator</p>
+        <p>
+          A powerful, dual-mode calculator built with Vanilla JavaScript and modern CSS Grid. 
+    It features a dynamic cursor for editing expressions, ghost parentheses, and seamlessly switches between Standard and Scientific modes.
+        </p>
+        <div id="Tech_Stack">
+          <p>Tech Stack:</p>
+          <div id="Stack">
+            <span><i class="fa-brands fa-html5"></i>HTML5</span>
+            <span><i class="fa-brands fa-css3-alt"></i>CSS3</span>
+            <span><i class="fa-brands fa-square-js"></i>Vanilla JS</span>
+            <span><i class="fa-solid fa-table-cells"></i>CSS Grid</span>
+          </div>
+        </div>
+        <div id="Features">
+          <p>Features:</p>
+          <ul>
+            <li>Standard & Scientific modes powered by dynamic CSS Grid.</li>
+            <li>
+              Interactive cursor to edit expressions midway.
+            </li>
+            <li>Full keyboard accessibility (Numpad, Enter, Arrows).</li>
+            <li>Smart auto-completion for missing parentheses.</li>
+          </ul>
+        </div>
+        <div id="Tips">
+          <p>Tips:</p>
+          <ul id="TipsList"></ul>
+        </div>
+        <div id="Settings">
+          <span id="Return_Portfolio">
+            <i class="fa-solid fa-tent-arrow-turn-left"></i>
+            <button>Back to Portfolio</button>
+          </span>
+          <span id="Reset_Page">
+            <i class="fa-solid fa-arrow-rotate-left"></i>
+            <button>Clear & Restart</button>
+          </span>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

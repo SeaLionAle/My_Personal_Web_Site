@@ -1,0 +1,338 @@
+:root {
+  --bg-body: #1b1b24;
+  --bg-main: #1e1e28;
+  --bg-card: #2b2b35;
+  --accent-color: #ffc107;
+  --text-primary: #ffffff;
+  --text-secondary: #8c8c8e;
+
+  --font-heading: "Montserrat";
+  --font-body: "Roboto";
+
+  --font-weight-headings: 800;
+  --font-weight-body: 600;
+
+  --font-size-body: 32px;
+  --font-size-others: 58px;
+}
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+#Container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--bg-body);
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* FIRST PART, NORMAL CALCULATOR*/
+
+#Calculator_App {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 480px;
+  padding: 30px;
+  background-color: var(--bg-main);
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#Display {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 98px;
+  padding: 20px;
+  font-size: var(--font-size-others);
+  background-color: var(--bg-card);
+  font-family: var(--font-heading);
+  color: var(--text-primary);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+#Display::-webkit-scrollbar {
+  display: none;
+}
+.cursor {
+  display: inline-block;
+  width: 3px;
+  height: 48px;
+  background-color: var(--accent-color);
+  animation: blink 1.2s step-end infinite;
+  vertical-align: middle;
+  border-radius: 2px;
+  margin: 0 1px;
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+char {
+  cursor: text;
+}
+.ghost-paren {
+  color: var(--text-secondary);
+  opacity: 0.5;
+}
+#Keys {
+  box-sizing: border-box;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas:
+    "c     n7  n8  n9"
+    "plus  n4  n5  n6"
+    "min   n1  n2  n3"
+    "mult  pct n0  dot"
+    "div   del eq  eq";
+  gap: 12px;
+  padding: 25px 0 15px 0;
+  margin: 0; 
+  transition: all 0.3s ease;
+}
+#Keys > button {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--bg-card);
+  color: var(--text-primary);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-body);
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+#Keys > button:hover {
+  background-color: var(--text-secondary);
+}
+#Keys > button:active {
+  transform: scale(0.95);
+  background-color: var(--accent-color);
+  color: var(--text-primary);
+}
+#Keys > button.Operator-btn {
+  background-color: var(--accent-color);
+  color: var(--bg-main);
+}
+#Keys > button.Operator-btn:hover {
+  background-color: var(--text-secondary);
+}
+#Keys > button.Operator-btn:active {
+  background-color: var(--bg-card);
+  color: var(--accent-color);
+}
+
+/* SCIENTIFIC CALCULATOR */
+
+.sci-btn {
+  display: none;
+}
+#Keys.scientific-mode {
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-areas:
+    "del  cbrt  ln     log    mod"
+    "c    pct   oparen cparen e"
+    "plus power n7     n8     n9"
+    "min  sqrt  n4     n5     n6"
+    "mult fact  n1     n2     n3"
+    "div  dot   pi     n0     eq";
+  gap: 8px; 
+}
+#Keys.scientific-mode .sci-btn {
+  display: block;
+}
+#Keys.scientific-mode > button {
+  font-size: 18px;
+}
+#Btn-Equals {
+  aspect-ratio: auto !important;
+  border-radius: 50px !important;
+}
+#Keys.scientific-mode #Btn-Zero {
+  aspect-ratio: 1 !important;
+  border-radius: 50% !important;
+}
+#Keys.scientific-mode #Btn-Equals {
+  aspect-ratio: 1 !important;
+  border-radius: 50% !important;
+  background-color: #2e7d32 !important;
+  color: #ffffff !important;
+  font-size: 30px !important;
+  box-shadow: 0 4px 12px rgba(46, 125, 50, 0.4);
+  transition: all 0.2s ease;
+}
+#Keys.scientific-mode #Btn-Equals:hover {
+  background-color: #1b5e20 !important;
+}
+#Keys.scientific-mode #Btn-Equals:active {
+  transform: scale(0.95);
+  background-color: #2e7d32 !important;
+}
+#Calculator_App > button {
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  padding: 16px 0;
+  width: 100%;
+  background-color: var(--accent-color);
+  cursor: pointer;
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-size: 18px;
+  font-weight: bold;
+  transition: 0.4s ease;
+  text-align: center;
+  margin-top: 10px;
+}
+#Calculator_App > button:hover{
+  background-color: var(--text-primary);
+  color: var(--bg-main);
+}
+
+
+/* SECOND PART */
+
+#Project_Info {
+  max-width: 540px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-main);
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--text-secondary);
+}
+#Project_Info > p {
+  margin: 20px 15px;
+  text-align: center;
+}
+#Project_Info > p:nth-child(1) {
+  color: var(--accent-color);
+  font-family: var(--font-heading);
+  font-size: 20px;
+}
+#Project_Info > p:nth-child(2) {
+  line-height: 2;
+}
+#Tech_Stack {
+  margin: 10px 15px;
+}
+#Stack {
+  display: flex;
+  justify-content: space-between;
+}
+#Tech_Stack > p {
+  color: var(--text-primary);
+  font-family: var(--font-heading);
+  font-size: 20px;
+  text-align: center;
+}
+#Stack > span {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+#Stack > span > i {
+  font-size: 36px;
+  transition: 0.4s ease;
+}
+#Stack > span > i:hover {
+  color: var(--accent-color);
+}
+#Features > p {
+  color: var(--text-primary);
+  font-family: var(--font-heading);
+  font-size: 20px;
+  text-align: center;
+}
+#Features > ul {
+  margin: 10px 15px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 2;
+}
+#Features > ul > li {
+  list-style: none;
+}
+#Tips {
+  margin: 10px 15px;
+}
+#Tips > p {
+  color: var(--text-primary);
+  font-family: var(--font-heading);
+  font-size: 20px;
+  text-align: center;
+}
+#TipsList{
+  margin: 10px 15px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 2;
+}
+#TipsList > li {
+  list-style: none;
+  color: var(--text-primary);
+  text-align: center;
+}
+#TipsList > li:last-child {
+  color: var(--accent-color);
+  animation: fadeIn 0.5s ease;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* THIRD PART */
+
+#Settings{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px 0 20px;
+  gap: 15px;
+}
+#Settings > span{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+#Settings > span >i{
+  font-size: 30px;
+  color: var(--text-primary);
+}
+#Settings > span >button{
+  border: none;
+  padding: 15px 30px;
+  background-color:
+  var(--accent-color);
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-family: var(--font-body);
+  font-size: 16px;
+}
