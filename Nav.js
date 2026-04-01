@@ -6,6 +6,8 @@ const Open_TodoList = document.getElementById("Open_TodoList");
 const Toggle_Apps = document.getElementById("Toggle_Apps");
 const Toggle_Apps_Text = document.getElementById("Toggle_Apps_Text");
 const Apps_List = document.getElementById("Apps_List");
+const Open_Calculator = document.getElementById("Open_Calculator");
+const Contact_Nav_Btn = document.getElementById("Contact_Nav_Btn");
 
 if (window.innerWidth <= 1024) {
   // MOBILE:
@@ -39,16 +41,32 @@ Reload_Page.addEventListener("click", () => {
 Open_TodoList.addEventListener("click", () => {
   window.location.href = "Projects/todo-list/";
 });
+Open_Calculator.addEventListener("click", () => {
+  window.location.href = "Projects/calculator/";
+});
 
 function toggleAppsMenu() {
+  const isOpening = !Apps_List.classList.contains("Show_Apps");
   Apps_List.classList.toggle("Show_Apps");
   Toggle_Apps.classList.toggle("Rotate_Arrow");
   if (window.innerWidth <= 1024) {
-    if (Apps_List.classList.contains("Show_Apps")) {
-      Nav_Bar.style.overflowX = "visible";
+    if (isOpening){
+      Reload_Page.classList.add("Hide_Mobile_Item_Animation");
+      Contact_Nav_Btn.classList.add("Hide_Mobile_Item_Animation");
+      setTimeout(() =>{
+        Reload_Page.classList.toggle("Hide_Mobile_Item");
+        Contact_Nav_Btn.classList.toggle("Hide_Mobile_Item");
+      }, 300);
+      Nav_Bar.style.overflowX = "auto";
     } else {
-      Nav_Bar.style.overflowX = "hidden";
-      Nav_Bar.scrollTo({ left: 0, behavior: "smooth" });
+    Reload_Page.classList.remove("Hide_Mobile_Item");
+    Contact_Nav_Btn.classList.remove("Hide_Mobile_Item");
+    setTimeout(() => {
+      Reload_Page.classList.remove("Hide_Mobile_Item_Animation");
+      Contact_Nav_Btn.classList.remove("Hide_Mobile_Item_Animation");
+    }, 100);
+    Nav_Bar.style.overflowX = "hidden";
+    Nav_Bar.scrollTo({ left: 0, behavior: "smooth" });
     }
   }
 }

@@ -36,7 +36,6 @@ body {
 /* FIRST PART, NORMAL CALCULATOR*/
 
 #Calculator_App {
-  box-sizing: border-box;
   width: 100%;
   max-width: 480px;
   padding: 30px;
@@ -78,8 +77,13 @@ body {
   margin: 0 1px;
 }
 @keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }
 char {
   cursor: text;
@@ -101,7 +105,7 @@ char {
     "div   del eq  eq";
   gap: 12px;
   padding: 25px 0 15px 0;
-  margin: 0; 
+  margin: 0;
   transition: all 0.3s ease;
 }
 #Keys > button {
@@ -151,7 +155,7 @@ char {
     "min  sqrt  n4     n5     n6"
     "mult fact  n1     n2     n3"
     "div  dot   pi     n0     eq";
-  gap: 8px; 
+  gap: 8px;
 }
 #Keys.scientific-mode .sci-btn {
   display: block;
@@ -199,11 +203,10 @@ char {
   text-align: center;
   margin-top: 10px;
 }
-#Calculator_App > button:hover{
+#Calculator_App > button:hover {
   background-color: var(--text-primary);
   color: var(--bg-main);
 }
-
 
 /* SECOND PART */
 
@@ -283,7 +286,7 @@ char {
   font-size: 20px;
   text-align: center;
 }
-#TipsList{
+#TipsList {
   margin: 10px 15px;
   padding: 0;
   display: flex;
@@ -301,38 +304,107 @@ char {
   animation: fadeIn 0.5s ease;
 }
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-5px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* THIRD PART */
 
-#Settings{
+#Settings {
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
   margin: 30px 0 20px;
-  gap: 15px;
 }
-#Settings > span{
+#Settings > span {
   display: flex;
   align-items: center;
+  margin: 20px;
   gap: 15px;
 }
-#Settings > span >i{
-  font-size: 30px;
-  color: var(--text-primary);
+#Settings > span > i {
+  margin-right: 10px;
+  font-size: 32px;
+  transition: 0.4s ease;
 }
-#Settings > span >button{
+#Settings > span > i:hover {
+  color: var(--accent-color);
+}
+#Settings > span > button {
   border: none;
-  padding: 15px 30px;
-  background-color:
-  var(--accent-color);
+  outline: none;
+  padding: 16px 0;
+  width: 250px;
+  background-color: var(--accent-color);
   font-weight: bold;
-  border-radius: 8px;
+  border-radius: 4px;
   cursor: pointer;
-  transition: 0.3s;
   font-family: var(--font-body);
   font-size: 16px;
+  transition: 0.4s ease;
+  text-align: center;
+}
+#Settings > span > button:hover {
+  background-color: var(--text-primary);
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 1024px) {
+  #Container {
+    flex-direction: column;
+    padding: 10px;
+  }
+}
+@media (max-width: 768px) {
+  #Keys > button {
+    font-size: 28px;
+  }
+  #Features > ul {
+    align-items: normal;
+  }
+}
+@media (max-width: 549px) and (min-width: 400px){
+  #Calculator_App {
+    max-width: 340px;
+  }
+}
+@media (max-width: 399px) and (min-width: 350px){
+  #Calculator_App {
+    max-width: 280px;
+  }
+  #Project_Info{
+    font-size: 14px;
+  }
+  #Stack > span > i{
+    font-size: 32px;
+  }
+  #Settings > span > button {
+    width: 200px;
+    padding: 12px 0;
+    font-size: 14px;
+  }
+}
+@media (max-width: 349px){
+  #Calculator_App {
+    max-width: 250px;
+  }
+  #Project_Info{
+    font-size: 14px;
+  }
+  #Stack > span > i{
+    font-size: 32px;
+  }
+  #Settings > span > button {
+    width: 200px;
+    padding: 12px 0;
+    font-size: 14px;
+  }
 }

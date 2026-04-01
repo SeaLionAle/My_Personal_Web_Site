@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Alessio Colombo | To-Do List</title>
+    <link rel="icon" type="image/png" href="../../Imgs/Favicon_Personal_Web_Site.png">
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -19,27 +20,30 @@
       ::-webkit-scrollbar {
         display: none;
       }
-      :root {
-        --bg-body: #1b1b24;
-        --bg-main: #1e1e28;
-        --bg-card: #2b2b35;
-        --accent-color: #ffc107;
-        --text-primary: #ffffff;
-        --text-secondary: #8c8c8e;
-
-        --font-heading: "Montserrat";
-        --font-body: "Roboto";
-
-        --font-weight-headings: 800;
-        --font-weight-body: 400;
-
-        --font-size-body: 16px;
-        --font-size-others: 20px;
-      }
     </style>
   </head>
   <body>
     <div id="Container">
+      <div id="Todo_App">
+        <p>To-Do List</p>
+        <div id="App">
+          <div id="Row">
+            <input type="text" id="Input-box" placeholder="Add your text" />
+            <button onclick="Addtask()">Add</button>
+          </div>
+          <ul id="List_Container"></ul>
+        </div>
+        <div id="Settings">
+          <span id="Return_Portfolio">
+            <i class="fa-solid fa-tent-arrow-turn-left"></i>
+            <button>Back to Portfolio</button>
+          </span>
+          <span id="Reset_Page">
+            <i class="fa-solid fa-arrow-rotate-left"></i>
+            <button>Clear & Restart</button>
+          </span>
+        </div>
+      </div>
       <div id="Project_Info">
         <p>JavaScript To-Do App</p>
         <p>
@@ -70,27 +74,6 @@
             <li>Type "Hello World!" in the input box.</li>
             <li>Click the "Add" button to save it.</li>
           </ul>
-        </div>
-      </div>
-
-      <div id="Todo_App">
-        <p>To-Do List</p>
-        <div id="Settings">
-          <span id="Return_Portfolio">
-            <i class="fa-solid fa-tent-arrow-turn-left"></i>
-            <button>Back to Portfolio</button>
-          </span>
-          <span id="Reset_Page">
-            <i class="fa-solid fa-arrow-rotate-left"></i>
-            <button>Clear & Restart</button>
-          </span>
-        </div>
-        <div id="App">
-          <div id="Row">
-            <input type="text" id="Input-box" placeholder="Add your text" />
-            <button onclick="Addtask()">Add</button>
-          </div>
-          <ul id="List_Container"></ul>
         </div>
       </div>
     </div>

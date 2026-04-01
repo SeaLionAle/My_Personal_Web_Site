@@ -128,7 +128,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px;
+  padding: 30px;
   cursor: pointer;
   transition: 0.4s ease;
   flex: 1;
@@ -151,7 +151,7 @@
   }
   #Nav_Bar {
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
     overflow-y: hidden;
   }
   #Nav_Bar.Hide {
@@ -205,8 +205,10 @@
     max-width: 500px;
   }
   #Apps_List > span {
+    flex: none;
     writing-mode: horizontal-tb;
     padding: 20px;
+    white-space: nowrap;
   }
   #Nav_Bar::-webkit-scrollbar {
     display: inline;
@@ -221,6 +223,13 @@
   }
   #Apps_List {
     flex-shrink: 0;
+  }
+  .Hide_Mobile_Item_Animation {
+    opacity: 0;
+    visibility: hidden;
+  }
+  .Hide_Mobile_Item{
+    display: none !important;
   }
 }
 @media (max-width: 349px) {

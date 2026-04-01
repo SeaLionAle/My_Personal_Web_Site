@@ -1,3 +1,20 @@
+:root {
+  --bg-body: #1b1b24;
+  --bg-main: #1e1e28;
+  --bg-card: #2b2b35;
+  --accent-color: #ffc107;
+  --text-primary: #ffffff;
+  --text-secondary: #8c8c8e;
+
+  --font-heading: "Montserrat";
+  --font-body: "Roboto";
+
+  --font-weight-headings: 800;
+  --font-weight-body: 400;
+
+  --font-size-body: 16px;
+  --font-size-others: 20px;
+}
 body {
   margin: 0;
   padding: 0;
@@ -10,20 +27,79 @@ body {
 #Container {
   width: 100%;
   min-height: 100vh;
-  padding: 10px;
   background-color: var(--bg-body);
   display: flex;
   flex-direction: row;
-  justify-content: center;
   gap: 50px;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 /* First Part */
 
+#Todo_App {
+  width: 100%;
+  max-width: 540px;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  background-color: var(--bg-main);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#Todo_App > p {
+  font-family: var(--font-heading);
+  font-size: 32px;
+  color: var(--accent-color);
+  font-weight: var(--font-weight-headings);
+}
+#Settings {
+  margin: 30px 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#Settings > span {
+  display: flex;
+  align-items: center;
+  margin: 20px;
+  gap: 10px;
+}
+#Settings > span > i {
+  margin-right: 10px;
+  font-size: 32px;
+  transition: 0.4s ease;
+}
+#Settings > span > i:hover {
+  color: var(--accent-color);
+}
+#Settings > span > button {
+  border: none;
+  outline: none;
+  padding: 16px 0;
+  width: 250px;
+  background-color: var(--accent-color);
+  cursor: pointer;
+  border-radius: 4px;
+  font-family: var(--font-body);
+  font-size: var(--font-size-body);
+  transition: 0.4s ease;
+  text-align: center;
+}
+#Settings > span > button:hover {
+  background-color: var(--text-primary);
+}
+
+/* Second Part */
+
 #Project_Info {
   max-width: 540px;
   width: 100%;
-  margin: 100px auto 20px;
+  padding: 30px;
   display: flex;
   flex-direction: column;
   background-color: var(--bg-main);
@@ -121,67 +197,7 @@ body {
   }
 }
 
-/* Second Part */
-
-#Todo_App {
-  width: 100%;
-  height: 50%;
-  max-width: 540px;
-  margin: 100px auto 20px;
-  padding: 40px 30px 70px;
-  border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-  background-color: var(--bg-main);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-#Todo_App > p {
-  font-family: var(--font-heading);
-  font-size: 32px;
-  color: var(--accent-color);
-  font-weight: var(--font-weight-headings);
-}
-#Settings {
-  max-width: 540px;
-  margin: 20px 0;
-  height: 50%;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-}
-#Settings > span {
-  display: flex;
-  align-items: center;
-  margin: 20px;
-  gap: 10px;
-}
-#Settings > span > i {
-  margin-right: 10px;
-  font-size: 32px;
-  transition: 0.4s ease;
-}
-#Settings > span > i:hover {
-  color: var(--accent-color);
-}
-#Settings > span > button {
-  border: none;
-  outline: none;
-  padding: 16px 0;
-  width: 250px;
-  background-color: var(--accent-color);
-  cursor: pointer;
-  border-radius: 4px;
-  font-family: var(--font-body);
-  font-size: var(--font-size-body);
-  transition: 0.4s ease;
-  text-align: center;
-}
-#Settings > span > button:hover {
-  background-color: var(--text-primary);
-}
-
-/* Third Part */
+/* APP PART (THIRD PART) */
 
 #Row {
   display: flex;
@@ -261,29 +277,30 @@ body {
   background: var(--bg-body);
 }
 
+/* MEDIA QUERIES */
+
 @media (max-width: 1024px) {
-  body {
-    overflow-x: hidden;
-  }
   #Container {
     flex-direction: column;
     align-items: center;
-    padding: 0;
-  }
-  #Project_Info {
-    margin: 20px auto;
+    padding: 10px;
   }
   #Todo_App {
-    margin: 20px auto;
-    padding: 30px 20px;
+    padding: 20px;
   }
   #Settings > span {
     margin: 10px;
   }
+  #Project_Info {
+    padding: 20px;
+  }
+  #Tips > ul {
+    align-items: normal;
+  }
 }
 @media (max-width: 1024px) and (min-width: 400px) {
   #Project_Info {
-    max-width: 400px;
+    max-width: 350px;
   }
   #Todo_App {
     max-width: 350px;
@@ -297,18 +314,16 @@ body {
     font-size: 14px;
   }
   #Project_Info {
-    max-width: 300px;
+    max-width: 275px;
   }
   #Tips > ul > li {
     text-align: center;
   }
-  #Todo_App {
-    max-width: 260px;
+  #Stack > span > i{
+    font-size: 32px;;
   }
-  #Settings > span > button {
-    width: 200px;
-    padding: 10px 0;
-    font-size: 14px;
+  #Todo_App {
+    max-width: 275px;
   }
   #Row {
     padding-left: 5px;
@@ -323,6 +338,11 @@ body {
   }
   #App > ul > li {
     padding: 10px;
+    font-size: 14px;
+  }
+  #Settings > span > button {
+    width: 200px;
+    padding: 10px 0;
     font-size: 14px;
   }
 }
