@@ -41,14 +41,19 @@
   font-weight: var(--font-weight-body);
   font-size: var(--font-size-body);
 }
-.Project_Info > span {
+.Link_Container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.Link_Container > span {
   color: var(--accent-color);
   text-decoration: none;
   cursor: pointer;
   font-weight: var(--font-weight-headings);
   transition: color 0.4s ease;
 }
-.Project_Info > span:hover {
+.Link_Container > span:hover {
   color: var(--text-primary);
 }
 

@@ -2,11 +2,11 @@ const Nav_Bar = document.getElementById("Nav_Bar");
 const Open_Nav_Bar = document.getElementById("Open_Nav_Bar");
 const Close_Nav_Bar = document.getElementById("Close_Nav_Bar");
 const Reload_Page = document.getElementById("Reload_Page");
-const Open_TodoList = document.getElementById("Open_TodoList");
+const Open_TodoList = document.querySelectorAll(".Open_TodoList");
 const Toggle_Apps = document.getElementById("Toggle_Apps");
 const Toggle_Apps_Text = document.getElementById("Toggle_Apps_Text");
 const Apps_List = document.getElementById("Apps_List");
-const Open_Calculator = document.getElementById("Open_Calculator");
+const Open_Calculator = document.querySelectorAll(".Open_Calculator");
 const Contact_Nav_Btn = document.getElementById("Contact_Nav_Btn");
 
 if (window.innerWidth <= 1024) {
@@ -37,12 +37,15 @@ Reload_Page.addEventListener("click", () => {
   location.reload();
   window.open("index.html", "_self");
 });
-
-Open_TodoList.addEventListener("click", () => {
-  window.location.href = "Projects/todo-list/";
+Open_TodoList.forEach((OpenT) => {
+  OpenT.addEventListener("click", () => {
+    window.location.href = "Projects/todo-list/";
+  });
 });
-Open_Calculator.addEventListener("click", () => {
-  window.location.href = "Projects/calculator/";
+Open_Calculator.forEach((OpenC) => {
+  OpenC.addEventListener("click", () => {
+    window.location.href = "Projects/calculator/";
+  });
 });
 
 function toggleAppsMenu() {
@@ -50,25 +53,38 @@ function toggleAppsMenu() {
   Apps_List.classList.toggle("Show_Apps");
   Toggle_Apps.classList.toggle("Rotate_Arrow");
   if (window.innerWidth <= 1024) {
-    if (isOpening){
+    if (isOpening) {
       Reload_Page.classList.add("Hide_Mobile_Item_Animation");
       Contact_Nav_Btn.classList.add("Hide_Mobile_Item_Animation");
-      setTimeout(() =>{
+      setTimeout(() => {
         Reload_Page.classList.toggle("Hide_Mobile_Item");
         Contact_Nav_Btn.classList.toggle("Hide_Mobile_Item");
       }, 300);
       Nav_Bar.style.overflowX = "auto";
     } else {
-    Reload_Page.classList.remove("Hide_Mobile_Item");
-    Contact_Nav_Btn.classList.remove("Hide_Mobile_Item");
-    setTimeout(() => {
-      Reload_Page.classList.remove("Hide_Mobile_Item_Animation");
-      Contact_Nav_Btn.classList.remove("Hide_Mobile_Item_Animation");
-    }, 100);
-    Nav_Bar.style.overflowX = "hidden";
-    Nav_Bar.scrollTo({ left: 0, behavior: "smooth" });
+      Reload_Page.classList.remove("Hide_Mobile_Item");
+      Contact_Nav_Btn.classList.remove("Hide_Mobile_Item");
+      setTimeout(() => {
+        Reload_Page.classList.remove("Hide_Mobile_Item_Animation");
+        Contact_Nav_Btn.classList.remove("Hide_Mobile_Item_Animation");
+      }, 100);
+      Nav_Bar.style.overflowX = "hidden";
+      Nav_Bar.scrollTo({ left: 0, behavior: "smooth" });
     }
   }
 }
 Toggle_Apps.addEventListener("click", toggleAppsMenu);
 Toggle_Apps_Text.addEventListener("click", toggleAppsMenu);
+
+const Open_Github_ToDo_List = document.getElementById("Github_Link_To-Do_List");
+Open_Github_ToDo_List.addEventListener("click", () => {
+  window.location.href =
+    "https://github.com/SeaLionAle/My_Personal_Web_Site/tree/main/Projects/todo-list";
+});
+const Open_Github_Calculator = document.getElementById(
+  "Github_Link_Calculator",
+);
+Open_Github_Calculator.addEventListener("click", () => {
+  window.location.href =
+    "https://github.com/SeaLionAle/My_Personal_Web_Site/tree/main/Projects/calculator";
+});
